@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +20,23 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+
+
         return true;
+    }
+
+    public void handleOnClickBtn(View view){
+
+        Button b = (Button)view;
+            String text = b.getText().toString();
+
+        if(b.getId() == R.id.button6)
+            text = "Capstone App!";
+
+
+        Toast.makeText(this,"This Button will launch my " + text + "!", Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
@@ -35,3 +54,4 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+
